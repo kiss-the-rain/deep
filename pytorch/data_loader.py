@@ -113,11 +113,11 @@ def save_vecs(vecs, fout):
 
 if __name__ == '__main__':
     input_dir='./data/github/'
-    train_set=CodeSearchDataset(input_dir, 'train.name.h5', 6, 'train.apiseq.h5', 20, 'train.tokens.h5', 30, 'train.desc.h5', 30)
+    train_set=CodeSearchDataset(input_dir, 'train.methname.h5', 6, 'train.apiseq.h5', 20, 'train.tokens.h5', 30, 'train.desc.h5', 30)
     train_data_loader=torch.utils.data.DataLoader(dataset=train_set, batch_size=1, shuffle=False, num_workers=1)
-    valid_set=CodeSearchDataset(input_dir, 'valid.name.h5', 6, 'valid.apiseq.h5', 20, 'valid.tokens.h5', 30, 'valid.desc.h5', 30)
+    valid_set=CodeSearchDataset(input_dir, 'valid.methname.h5', 6, 'valid.apiseq.h5', 20, 'valid.tokens.h5', 30, 'valid.desc.h5', 30)
     valid_data_loader=torch.utils.data.DataLoader(dataset=valid_set, batch_size=1, shuffle=False, num_workers=1)
-    use_set=CodeSearchDataset(input_dir, 'use.name.h5', 6, 'use.apiseq.h5', 20, 'use.tokens.h5', 30)
+    use_set=CodeSearchDataset(input_dir, 'use.methname.h5', 6, 'use.apiseq.h5', 20, 'use.tokens.h5', 30)
     use_data_loader=torch.utils.data.DataLoader(dataset=use_set, batch_size=1, shuffle=False, num_workers=1)
     vocab_api = load_dict(input_dir+'vocab.apiseq.json')
     vocab_name = load_dict(input_dir+'vocab.name.json')
